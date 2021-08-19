@@ -13,10 +13,12 @@ $accent=array('á','à','â','ä','ã','å','ç','é','è','ê','ê','ë','í','
 $pasaccent=array('a','a','a','a','a','a','c','e','e','e','e','e','i','i','i','i','n','o','o','o','o','o','u','u','u','u','y','y');
 
 $pnj="";
+$tabpnj=array();
 $rqtliste="SELECT id, famille,  nom  FROM PNJ";
 $liste=$mysqli->query($rqtliste);
 while($laliste=$liste->fetch_assoc()){
     $pnj.='"'.$laliste['famille'].' '.$laliste['nom'].'", ';
+    $tabpnj[$laliste['famille'].' '.$laliste['nom']]=$laliste['id'];
     if($laliste['id']==$cible){
         $current=$laliste['famille'].' '.$laliste['nom'];
     }
@@ -45,7 +47,9 @@ $pnj=substr($pnj, 0, -2);
 <div id="allscreen">
     <div id="grey"></div>
     <div id="relations">
+       <div id='closerelation'>X</div>    
         <h4>gestion des relations pour <br><?php echo $current; ?></h4>
+      
 
         <h5>Relations actuelles : </h5>
         <ul class="relations">

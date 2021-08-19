@@ -70,7 +70,7 @@ hr{border-top: 1px solid #222}
 .relations{display: flex; flex-direction: row;  flex-wrap: wrap; margin: 5px 0 0 0;padding: 0;list-style: none; height: 170px; overflow: auto; width: 100%}
 .relations>li{width: 50%; padding:0 0 3px 3px; box-sizing: border-box; cursor: pointer}
 .relations>li:hover{color:#747474 }
-.close{position: absolute;font-family: "Present-lt-black-condensed", serif;color:#000000;font-size: 24px;right:10px; top:10px}
+.close, #closerelation{position: absolute;font-family: "Present-lt-black-condensed", serif;color:#000000;font-size: 24px;right:10px; top:10px}
 #socle{position:fixed;z-index: 50; top:200px; }
 #editbtn{position: absolute; bottom: 10px; right:12px; background-image: url(../images/edit.png); width: 24px; height: 24px; }
 

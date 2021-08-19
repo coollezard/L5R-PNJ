@@ -5,15 +5,18 @@ $(function() {
     var nbouvert=0;
     
     
-    $('.filtre').on('change',function(){editfiltre()});
     $(document).on('click', '.minicarte', function() {popitup($(this).attr('id'))});
     $(document).on('click', '.relation', function() {popitup($(this).attr('id'))});
     $(document).on('click', '.close', function() {closeme($(this).attr('id'))});
+    $(document).on('click', '#closerelation', function() {closerela()});
     $(document).on('mouseover', '.bigbanner', function() {$(this).closest('.bigcarte').draggable();});
     $(document).on('mousedown', '.bigcarte', function() {tothetop($(this).attr('id'))});
     $(document).on('click', '#editbtn', function() {openrelation($(this.parentElement).attr('id'))});
+    $(document).on('click', '.ui-menu-item',  function(){test()});
     
     
+    
+                   
     function editfiltre(){
         var clan=$('#clan').val();
         var famille=$('#famille').val();
@@ -42,6 +45,12 @@ $(function() {
         $( "#"+cible ).remove();
         nbouvert--;
         if(nbouvert<=0){pos=-70;}
+    }
+    
+    function closerela(){
+        
+        $("#allscreen").remove();
+        
     }
     
     function tothetop(e){
