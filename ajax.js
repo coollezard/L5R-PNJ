@@ -5,17 +5,22 @@ $(function() {
     var nbouvert=0;
     
     
+    
+    $('.filtre').on('change',function(){editfiltre()});
     $(document).on('click', '.minicarte', function() {popitup($(this).attr('id'))});
     $(document).on('click', '.relation', function() {popitup($(this).attr('id'))});
-    $(document).on('click', '.close', function() {closeme($(this).attr('id'))});
     $(document).on('click', '#closerelation', function() {closerela()});
+    $(document).on('click', '.close', function() {closeme($(this).attr('id'))});
     $(document).on('mouseover', '.bigbanner', function() {$(this).closest('.bigcarte').draggable();});
     $(document).on('mousedown', '.bigcarte', function() {tothetop($(this).attr('id'))});
     $(document).on('click', '#editbtn', function() {openrelation($(this.parentElement).attr('id'))});
-    $(document).on('click', '.ui-menu-item',  function(){test()});
+    $(document).on('change', '#larelation', function() {test()});
     
     
-    
+    function test(){
+        var monalerte=$('#larelation').val
+        alert('prout');
+    }
                    
     function editfiltre(){
         var clan=$('#clan').val();
@@ -23,8 +28,7 @@ $(function() {
         var sexe=$('#sexe').val();
         var scenario=$('#scenario').val();
         var etat=$('#etat').val();
-        $.post('ajax/listevignettes.php',{clan:clan,famille:famille,sexe:sexe,scenario:scenario,etat:etat}, function(data){$("#tableau").html(data);});  
-
+        $.post('ajax/listevignettes.php',{clan:clan,famille:famille,sexe:sexe,scenario:scenario,etat:etat}, function(data){$("#tableau").html(data);}); 
     }
     function popitup(e){
         var idcliked=e;

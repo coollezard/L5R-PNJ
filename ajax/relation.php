@@ -14,34 +14,18 @@ $pasaccent=array('a','a','a','a','a','a','c','e','e','e','e','e','i','i','i','i'
 
 $pnj="";
 $tabpnj=array();
-$rqtliste="SELECT id, famille,  nom  FROM PNJ";
+$datalist="";
+$rqtliste="SELECT id, famille,  nom  FROM PNJ ORDER BY famille, nom";
 $liste=$mysqli->query($rqtliste);
 while($laliste=$liste->fetch_assoc()){
-    $pnj.='"'.$laliste['famille'].' '.$laliste['nom'].'", ';
-    $tabpnj[$laliste['famille'].' '.$laliste['nom']]=$laliste['id'];
+    $datalist.="<option id='".$laliste['id']."'>".$laliste['famille']." ".$laliste['nom']."</option>";
     if($laliste['id']==$cible){
         $current=$laliste['famille'].' '.$laliste['nom'];
     }
 }
-$pnj=substr($pnj, 0, -2);
 
 ?>
 
-
-
-<script type="application/javascript">
-    $(function() {
-        var availableTags = [
-            <?php echo $pnj; ?>
-        ];
-        $("#larelation").on('input', function() {
-            $("#larelation").autocomplete({
-                source: availableTags
-            });
-        });
-    });
-
-</script>
 
 
 <div id="allscreen">
@@ -75,8 +59,12 @@ $pnj=substr($pnj, 0, -2);
 
         <h5> Ajouter une relation pour <br><?php echo $current; ?></h5>
         selectionner la relation
+       
         <div>
-            <p id="box"><input type="text" id="larelation" name="larelation" /></p>
+        <input type="search" list="selectguy">
+        <datalist id="selectguy">
+            <?php echo $datalist;?>
+        </datalist>
         </div>
 
     </div>
