@@ -77,7 +77,13 @@ hr{border-top: 1px solid #222}
 #grey{position:fixed; top:0; left: 0; right: 0; height: 100vh; background-color: #000000;z-index: 100; opacity: .9}
 #relations{position: fixed ; top:30%; height: 50vh; left: 30%; right: 30%;  background-color: #AAA; border-radius: 10px; box-shadow: 1px 1px 1px #000;z-index: 101 }
 #relations h4{text-align: center; padding-top: 10px; padding-bottom: 10px }
+#relationflex{display: flex; flex-direction: row; flex-wrap: wrap;justify-content: flex-start;}
+
+
 
 ul#ui-id-1 { z-index: 2100;list-style: none;}
 li.ui-menu-item{ border: 1px solid #050505; background-color: #DDD}
 li.ui-menu-item:hover{background-color: #FFF}
+
+
+

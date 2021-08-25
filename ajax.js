@@ -14,12 +14,15 @@ $(function() {
     $(document).on('mouseover', '.bigbanner', function() {$(this).closest('.bigcarte').draggable();});
     $(document).on('mousedown', '.bigcarte', function() {tothetop($(this).attr('id'))});
     $(document).on('click', '#editbtn', function() {openrelation($(this.parentElement).attr('id'))});
-    $(document).on('change', '#larelation', function() {test()});
+    $(document).on('change', '#relaselect', function() {relationadd()});
     
     
-    function test(){
-        var monalerte=$('#larelation').val
-        alert('prout');
+    function relationadd(){
+        var myAid=$('#current').val();
+        var myA=$('#currentnom').val();
+        var myB=$('#relaselect').val();
+        
+        alert( "principal : "+myAid+" - "+myA+";     relation : "+myB);
     }
                    
     function editfiltre(){

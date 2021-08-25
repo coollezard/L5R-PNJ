@@ -18,7 +18,7 @@ $datalist="";
 $rqtliste="SELECT id, famille,  nom  FROM PNJ ORDER BY famille, nom";
 $liste=$mysqli->query($rqtliste);
 while($laliste=$liste->fetch_assoc()){
-    $datalist.="<option id='".$laliste['id']."'>".$laliste['famille']." ".$laliste['nom']."</option>";
+    $datalist.="<option value='".$laliste['famille']." ".$laliste['nom']."'></option>";
     if($laliste['id']==$cible){
         $current=$laliste['famille'].' '.$laliste['nom'];
     }
@@ -34,7 +34,9 @@ while($laliste=$liste->fetch_assoc()){
        <div id='closerelation'>X</div>    
         <h4>gestion des relations pour <br><?php echo $current; ?></h4>
       
-
+      
+      <div id="relationflex">
+       <div id="relagauche">
         <h5>Relations actuelles : </h5>
         <ul class="relations">
             <?php
@@ -61,10 +63,17 @@ while($laliste=$liste->fetch_assoc()){
         selectionner la relation
        
         <div>
-        <input type="search" list="selectguy">
+        <input type="select" list="selectguy" id="relaselect" name="relaselect">
         <datalist id="selectguy">
+           <select>
             <?php echo $datalist;?>
+            </select>
         </datalist>
+        <input type="hidden" name="current" id="current" value="<?php echo $cible; ?>">
+        <input type="hidden" name="currentnom" id="currentnom" value="<?php echo $current; ?>">
+        </div>
+          </div>
+          <div id="reladroite"></div>
         </div>
 
     </div>
