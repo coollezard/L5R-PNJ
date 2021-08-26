@@ -4,8 +4,8 @@
 
 <?php
 
-//$cible=$_GET['cible'];
-$cible=41;
+$cible=$_POST['myAid'];
+//$cible=41;
 include("../connexion.php");
 
 
@@ -19,7 +19,7 @@ $tabcible['nom']='';
 
 $tabrelation=array();
 $tabrelation['id']='';
-$tabrelation['nom']=$_GET['relation'];
+$tabrelation['nom']=$_POST['relation'];
 
 $rqtliste="SELECT id, famille,  nom  FROM PNJ";
 $liste=$mysqli->query($rqtliste);
@@ -40,6 +40,8 @@ while($laliste=$liste->fetch_assoc()){
 
 
 <form action="">
+<input type="hidden" name='pnja' id="pnja" value="<?php echo $cible ?>">
+<input type="hidden" name='pnjb' id="pnjb" value="<?php echo $tabrelation['id'] ?>">
 <div>
     <?php echo $tabrelation['nom'] ?> est  le/la <input type="text" name="relaA" id="relaA"> de <?php echo $tabcible['nom'] ?>     
 </div>
@@ -47,6 +49,8 @@ while($laliste=$liste->fetch_assoc()){
 <div>
     <?php echo $tabcible['nom'] ?> est  le/la <input type="text" name="relaB" id="relaB"> de <?php echo $tabrelation['nom'] ?>     
 </div>    
-    
+<div>
+    <input type="button" id="sauver" name="sauver" value="enregistrer">
+</div>    
     
 </form>

@@ -4,8 +4,8 @@
 
 <?php
 
-//$cible=$_GET['cible'];
-$cible=41;
+$cible=$_POST['id'];
+//$cible=41;
 include("../connexion.php");
 $rqtrela="SELECT id_relation, relation, nom, famille, clan  FROM relations LEFT JOIN PNJ ON PNJ.id=id_relation WHERE id_pnj='$cible';";
 $rela=$mysqli->query($rqtrela);

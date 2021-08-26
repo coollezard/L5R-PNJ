@@ -138,7 +138,7 @@ while($perso=$resultat->fetch_assoc()){
 
 
             </div>
-            <div id='editbtn'></div>
+            <div id='editbtn' value='$cible'></div>
         </div>";
     
     

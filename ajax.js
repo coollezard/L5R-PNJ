@@ -13,16 +13,26 @@ $(function() {
     $(document).on('click', '.close', function() {closeme($(this).attr('id'))});
     $(document).on('mouseover', '.bigbanner', function() {$(this).closest('.bigcarte').draggable();});
     $(document).on('mousedown', '.bigcarte', function() {tothetop($(this).attr('id'))});
-    $(document).on('click', '#editbtn', function() {openrelation($(this.parentElement).attr('id'))});
+    $(document).on('click', '#editbtn', function() {openrelation($(this).attr('value'))});
     $(document).on('change', '#relaselect', function() {relationadd()});
+    $(document).on('click', '#sauver', function() {sauvegarde()});
+    
+    function sauvegarde(){
+        $('#relaselect').val("");
+        var pnjA=$('#pnja').attr('value');
+        var pnjB=$('#pnjb').attr('value');
+        var rela1=$('#relaA').val();
+        var rela2=$('#relaB').val();
+        $.post('ajax/update-rela.php',{cibleA:pnjA,cibleB:pnjB,relation1:rela1,relation2:rela2}, function(data){$("#reladroite").html(data);});
+    }
     
     
     function relationadd(){
         var myAid=$('#current').val();
         var myA=$('#currentnom').val();
         var myB=$('#relaselect').val();
-        
-        alert( "principal : "+myAid+" - "+myA+";     relation : "+myB);
+        $.post('ajax/relation-call.php',{myAid:myAid,myA:myA,relation:myB}, function(data){$("#reladroite").html(data);});
+        //alert( "principal : "+myAid+" - "+myA+";     relation : "+myB);
     }
                    
     function editfiltre(){
@@ -73,7 +83,7 @@ $(function() {
     }
     
    function openrelation(e){
-       $.post('ajax/relation.php',{id:41}, function(data){$("#main").append(data);});
+       $.post('ajax/relation.php',{id:e}, function(data){$("#main").append(data);});
    }
 
     
