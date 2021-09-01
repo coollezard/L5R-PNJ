@@ -11,7 +11,7 @@ $zindex=$_POST['z'];
 $pos=$_POST['pos'];
 //echo $requete;
 
-$requete2="SELECT id_relation, relation, nom, famille, clan  FROM relations LEFT JOIN PNJ ON PNJ.id=id_relation WHERE id_pnj='$cible';";
+$requete2="SELECT relations.id AS id, id_relation, relation, nom, famille, clan  FROM relations LEFT JOIN PNJ ON PNJ.id=id_relation WHERE id_pnj='$cible';";
 $resultat2=$mysqli->query($requete2);
 $accent=array('á','à','â','ä','ã','å','ç','é','è','ê','ê','ë','í','ì','î','ï','ñ','ó','ò','ô','ö','õ','ú','ù','û','ü','ý','ÿ');
 $pasaccent=array('a','a','a','a','a','a','c','e','e','e','e','e','i','i','i','i','n','o','o','o','o','o','u','u','u','u','y','y');
@@ -45,10 +45,11 @@ while($rela=$resultat2->fetch_assoc()){
     }
     $alt=$famille.$rela['nom'];
     $alt=str_replace(' ','',$alt);
-    $identifiant=$rela['id_relation'];
+    $identifiant=$rela['id'];
+    $lautre=$rela['id_relation'];
     
 
-    $relation.="<li class='relation' id='a_$identifiant' alt='$alt'>$famille"." ".$rela['nom']." (".$rela['relation'].")</li>";
+    $relation.="<li class='relation' id='a_$identifiant' name='$lautre'  alt='$alt'>$famille"." ".$rela['nom']." (".$rela['relation'].")</li>";
 }
 
 
@@ -130,7 +131,7 @@ while($perso=$resultat->fetch_assoc()){
                 <div class=\"ligne3\"><span>Notes : </span><br> ".nl2br($perso['note'])."</div>
                 <div class=\"ligne4\">
                     <span>Relations :</span>
-                    <ul class=\"relations\">
+                    <ul class=\"relations\" id=\"relationde$cible\">
                     $relation
                        
                     </ul>

@@ -1,89 +1,502 @@
-@font-face{
-  font-family: "Present-lt-black-condensed";
-  src: url("../font/Present-lt-black-condensed.woff");
+@font-face {
+    font-family: "Present-lt-black-condensed";
+    src: url("../font/Present-lt-black-condensed.woff");
 }
-#main{
-    background-image: url(../images/papier.jpg);font-family: 'Present-lt-black-condensed', cursive;
+
+#main {
+    background-image: url(../images/papier.jpg);
+    font-family: 'Present-lt-black-condensed', cursive;
 }
-.mon{display: block; width: 100%;  height: auto; margin-top:10px}
-.minimon{ width:50px;  height: auto; margin:10px 20px 0 20px}
-.mon2{display: block; width: 70%;  height: auto; margin:5px auto}
-.minimon2{ width:30px;  height: auto; margin-top:10px}
-.tronche{display: block;width: 90%; height: auto; box-shadow: 5px 6px 5px 0px #000000}
-.minitronche{width: 20px; height: auto; box-shadow: 1px 2px 1px 0px #000000}
-#postit{background-image: url(../images/trombone.png),url(../images/postit.jpg);background-repeat: no-repeat, no-repeat;background-position: 20px 0, 0 19px;padding: 0;}
-#postit>div{box-shadow: 5px 6px 5px 0px #333333; margin-top: 19px;padding: 50px 20px 10px 20px}
-.centreblock{display: block; margin:auto}
-#age{font-size:2em}
-#occup{font-size:1.5em; padding:0 2em}
-.longpart{padding: 0 3%}
-.nomfiche{color: #333; text-decoration: none}
-.nomfiche:hover{color: #000; font-weight: bold;text-decoration: none}
-hr{border-top: 1px solid #222}
-.ligneMiniPerso{padding-top:2px;}
-.minitronche{margin-right: 3px;}
+
+.mon {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 10px
+}
+
+.minimon {
+    width: 50px;
+    height: auto;
+    margin: 10px 20px 0 20px
+}
+
+.mon2 {
+    display: block;
+    width: 70%;
+    height: auto;
+    margin: 5px auto
+}
+
+.minimon2 {
+    width: 30px;
+    height: auto;
+    margin-top: 10px
+}
+
+.tronche {
+    display: block;
+    width: 90%;
+    height: auto;
+    box-shadow: 5px 6px 5px 0px #000000
+}
+
+.minitronche {
+    width: 20px;
+    height: auto;
+    box-shadow: 1px 2px 1px 0px #000000
+}
+
+#postit {
+    background-image: url(../images/trombone.png), url(../images/postit.jpg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 20px 0, 0 19px;
+    padding: 0;
+}
+
+#postit > div {
+    box-shadow: 5px 6px 5px 0px #333333;
+    margin-top: 19px;
+    padding: 50px 20px 10px 20px
+}
+
+.centreblock {
+    display: block;
+    margin: auto
+}
+
+#age {
+    font-size: 2em
+}
+
+#occup {
+    font-size: 1.5em;
+    padding: 0 2em
+}
+
+.longpart {
+    padding: 0 3%
+}
+
+.nomfiche {
+    color: #333;
+    text-decoration: none
+}
+
+.nomfiche:hover {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none
+}
+
+hr {
+    border-top: 1px solid #222
+}
+
+.ligneMiniPerso {
+    padding-top: 2px;
+}
+
+.minitronche {
+    margin-right: 3px;
+}
 
 
 /*-----------------------------------------------*/
 
 
-#filtres{display:flex;  flex-wrap: wrap; flex-direction: row; justify-content: space-between;margin-bottom: 20px}
-#filtres>div{display: flex; flex-direction: column;}
-#filtres>div label{text-align: center; font-size: 14px; font-size: 18px}
-#filtres>div select{ height: 19px;border: none;  border-top: 1px solid #1d0000; border-bottom: 1px solid #1d0000;padding: 0; text-align: center;text-align-last: center;font-size: 15px}
-#filtres>div option{text-align: center;padding: 0; text-align-last: center;
+#filtres {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px
 }
-.rouleau:before{content:url(../images/rouleaug.png); height: 19px;margin: 0; padding: 0; border:none;position: relative; left:5px;top: 2px}
-.rouleau:after{content:url(../images/rouleaud.png); height: 19px;margin: 0; padding: 0; border:none;position: relative; right:5px;top: 2px}
+
+#filtres > div {
+    display: flex;
+    flex-direction: column;
+}
+
+#filtres > div label {
+    text-align: center;
+    font-size: 14px;
+    font-size: 18px
+}
+
+#filtres > div select {
+    height: 19px;
+    border: none;
+    border-top: 1px solid #1d0000;
+    border-bottom: 1px solid #1d0000;
+    padding: 0;
+    text-align: center;
+    text-align-last: center;
+    font-size: 15px
+}
+
+#filtres > div option {
+    text-align: center;
+    padding: 0;
+    text-align-last: center;
+}
+
+.rouleau:before {
+    content: url(../images/rouleaug.png);
+    height: 19px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    position: relative;
+    left: 5px;
+    top: 2px
+}
+
+.rouleau:after {
+    content: url(../images/rouleaud.png);
+    height: 19px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    position: relative;
+    right: 5px;
+    top: 2px
+}
 
 
-#tableau{display:flex; flex-direction: row; flex-wrap: wrap; justify-content:space-around}
-.minicarte{width: 195px; height: 190px;background-color: #000000;margin-bottom:10px;margin-right: 10px;position: relative; cursor: pointer}
-.miniportrait{width: 185px;height: 141px;margin:27px auto 0 auto; background-size: cover; position: relative }
-.minibanner{ font-family: "Present-lt-black-condensed", serif; text-align: center;  width: 184px; height: 25px; position: absolute;top: -24px; left:0px; background-image: url(../images/minibanner.jpg); font-size:18px}
-.minimonclan{width: 25px; height: 25px; position: absolute; left: 0; top: 0}
-.minimonfamille{width: 25px; height: 25px; position: absolute; right: 0; top: 0}
-.minimonfamille>img, .minimonclan>img{width: 100%}
-.minisoul{height: 61px; width:43px; position: absolute;bottom: 0; left: 0}
-.miniactivite{color: #FFFFFF; text-align: center;font-size: 16px;overflow: hidden; height: 20px}
+#tableau {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around
+}
+
+.minicarte {
+    width: 195px;
+    height: 190px;
+    background-color: #000000;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer
+}
+
+.miniportrait {
+    width: 185px;
+    height: 141px;
+    margin: 27px auto 0 auto;
+    background-size: cover;
+    position: relative
+}
+
+.minibanner {
+    font-family: "Present-lt-black-condensed", serif;
+    text-align: center;
+    width: 184px;
+    height: 25px;
+    position: absolute;
+    top: -24px;
+    left: 0px;
+    background-image: url(../images/minibanner.jpg);
+    font-size: 18px
+}
+
+.minimonclan {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 0;
+    top: 0
+}
+
+.minimonfamille {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+.minimonfamille > img,
+.minimonclan > img {
+    width: 100%
+}
+
+.minisoul {
+    height: 61px;
+    width: 43px;
+    position: absolute;
+    bottom: 0;
+    left: 0
+}
+
+.miniactivite {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    overflow: hidden;
+    height: 20px
+}
 
 
-.bigcarte{width: 882px; height: 462px;background-color: #000000;position: absolute; display: flex; flex-direction: row; flex-wrap: nowrap;justify-content: flex-start}
-.biggauche{width: 392px; height: 370px}
-.bigportrait{width: 370px;height: 280px;margin:57px auto 0 auto; background-size: cover; position: relative }
-.bigbanner{font-family: "Present-lt-black-condensed", serif; text-align: center;  width: 370px; height: 48px; position: absolute;top: -47px; left:0px; background-image: url(../images/bigbanner.jpg); font-size:30px; line-height: 45px;cursor:move}
-.bigmonclan{width: 48px; height: 48px; position: absolute; left: 0; top: 0}
-.bigmonfamille{width: 48px; height: 48px; position: absolute; right: 0; top: 0}
-.bigmonfamille>img, .bigmonclan>img{width: 100%}
-.bigactivite{color: #FFFFFF; text-align: center;font-size: 24px;overflow: hidden; height:40px; font-family: "Present-lt-black-condensed", serif; padding-top: 6px; box-sizing: border-box}
-.bigdetails{display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start;font-family: "Present-lt-black-condensed", serif;color: #FFFFFF;box-sizing: border-box; padding: 0 15px }
-.bigdetails>div{width: 50%; margin: 0; padding: 0; border: none; height: 34px;text-align: left; font-size: 24px }
-.bigdetails>div:nth-child(2N){text-align: right}
-.bigdroit{background-color: #FFFFFF; width: 481px; height: 442px; margin-top :12px;padding: 10px; box-sizing: border-box}
-.bigdroit>.ligne1{display: flex; flex-wrap: nowrap;  flex-direction: row; justify-content: flex-start; height: 35px;font-family: "Present-lt-black-condensed", serif;color: #000000;font-size: 24px;}
-.bigdroit>.ligne1>div{width:190px}
-.bigdroit>.ligne1>div+div{width: 289px}
-.bigdroit>.ligne2{height: 54px; font-size: 14px; font-family:Verdana; color: #000000; line-height: 16px }
-.bigdroit>.ligne3{height: 129px; font-size: 14px; font-family:Verdana; color: #000000; line-height: 16px }
-.bigdroit>.ligne4{height: 170px; font-size: 14px; font-family:Verdana; color: #000000 }
-.bigdroit span {font-family: "Present-lt-black-condensed", serif;color: #747474;font-size: 24px; }
-.relations{display: flex; flex-direction: row;  flex-wrap: wrap; margin: 5px 0 0 0;padding: 0;list-style: none; height: 170px; overflow: auto; width: 100%}
-.relations>li{width: 50%; padding:0 0 3px 3px; box-sizing: border-box; cursor: pointer}
-.relations>li:hover{color:#747474 }
-.close, #closerelation{position: absolute;font-family: "Present-lt-black-condensed", serif;color:#000000;font-size: 24px;right:10px; top:10px}
-#socle{position:fixed;z-index: 50; top:200px; }
-#editbtn{position: absolute; bottom: 10px; right:12px; background-image: url(../images/edit.png); width: 24px; height: 24px; }
+.bigcarte {
+    width: 882px;
+    height: 462px;
+    background-color: #000000;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start
+}
 
-#grey{position:fixed; top:0; left: 0; right: 0; height: 100vh; background-color: #000000;z-index: 100; opacity: .9}
-#relations{position: fixed ; top:30%; height: 50vh; left: 30%; right: 30%;  background-color: #AAA; border-radius: 10px; box-shadow: 1px 1px 1px #000;z-index: 101 }
-#relations h4{text-align: center; padding-top: 10px; padding-bottom: 10px }
-#relationflex{display: flex; flex-direction: row; flex-wrap: wrap;justify-content: flex-start;}
+.biggauche {
+    width: 392px;
+    height: 370px
+}
+
+.bigportrait {
+    width: 370px;
+    height: 280px;
+    margin: 57px auto 0 auto;
+    background-size: cover;
+    position: relative
+}
+
+.bigbanner {
+    font-family: "Present-lt-black-condensed", serif;
+    text-align: center;
+    width: 370px;
+    height: 48px;
+    position: absolute;
+    top: -47px;
+    left: 0px;
+    background-image: url(../images/bigbanner.jpg);
+    font-size: 30px;
+    line-height: 45px;
+    cursor: move
+}
+
+.bigmonclan {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    left: 0;
+    top: 0
+}
+
+.bigmonfamille {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+.bigmonfamille > img,
+.bigmonclan > img {
+    width: 100%
+}
+
+.bigactivite {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 24px;
+    overflow: hidden;
+    height: 40px;
+    font-family: "Present-lt-black-condensed", serif;
+    padding-top: 6px;
+    box-sizing: border-box
+}
+
+.bigdetails {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    font-family: "Present-lt-black-condensed", serif;
+    color: #FFFFFF;
+    box-sizing: border-box;
+    padding: 0 15px
+}
+
+.bigdetails > div {
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    height: 34px;
+    text-align: left;
+    font-size: 24px
+}
+
+.bigdetails > div:nth-child(2N) {
+    text-align: right
+}
+
+.bigdroit {
+    background-color: #FFFFFF;
+    width: 481px;
+    height: 442px;
+    margin-top: 12px;
+    padding: 10px;
+    box-sizing: border-box
+}
+
+.bigdroit > .ligne1 {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 35px;
+    font-family: "Present-lt-black-condensed", serif;
+    color: #000000;
+    font-size: 24px;
+}
+
+.bigdroit > .ligne1 > div {
+    width: 190px
+}
+
+.bigdroit > .ligne1 > div + div {
+    width: 289px
+}
+
+.bigdroit > .ligne2 {
+    height: 54px;
+    font-size: 14px;
+    font-family: Verdana;
+    color: #000000;
+    line-height: 16px
+}
+
+.bigdroit > .ligne3 {
+    height: 129px;
+    font-size: 14px;
+    font-family: Verdana;
+    color: #000000;
+    line-height: 16px
+}
+
+.bigdroit > .ligne4 {
+    height: 170px;
+    font-size: 14px;
+    font-family: Verdana;
+    color: #000000
+}
+
+.bigdroit span {
+    font-family: "Present-lt-black-condensed", serif;
+    color: #747474;
+    font-size: 24px;
+}
+
+.relations,
+.relations2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 5px 0 0 0;
+    padding: 0;
+    list-style: none;
+    height: 170px;
+    overflow: auto;
+    width: 100%
+}
+
+.relations > li {
+    width: 50%;
+    padding: 0 0 3px 3px;
+    box-sizing: border-box;
+    cursor: pointer
+}
+
+.relations > li:hover {
+    color: #747474
+}
+
+.close,
+#closerelation {
+    position: absolute;
+    font-family: "Present-lt-black-condensed", serif;
+    color: #000000;
+    font-size: 24px;
+    right: 10px;
+    top: 10px
+}
+
+#socle {
+    position: fixed;
+    z-index: 50;
+    top: 200px;
+}
+
+#editbtn {
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    background-image: url(../images/edit.png);
+    width: 24px;
+    height: 24px;
+}
+
+#grey {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background-color: #000000;
+    z-index: 100;
+    opacity: .9
+}
+
+#relations {
+    position: fixed;
+    top: 30%;
+    height: 50vh;
+    left: 30%;
+    right: 30%;
+    background-color: #AAA;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #000;
+    z-index: 101;
+    padding: 10px
+}
+
+#relations h4 {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px
+}
+
+#relationflex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+#reladroite,
+#relagauche {
+    width: 50%;
+}
+
+#insert {
+    margin-top: 20px;
+}
 
 
+ul#ui-id-1 {
+    z-index: 2100;
+    list-style: none;
+}
 
-ul#ui-id-1 { z-index: 2100;list-style: none;}
-li.ui-menu-item{ border: 1px solid #050505; background-color: #DDD}
-li.ui-menu-item:hover{background-color: #FFF}
+li.ui-menu-item {
+    border: 1px solid #050505;
+    background-color: #DDD
+}
 
-
-
+li.ui-menu-item:hover {
+    background-color: #FFF
+}

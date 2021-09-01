@@ -7,7 +7,7 @@
 $cible=$_POST['id'];
 //$cible=41;
 include("../connexion.php");
-$rqtrela="SELECT id_relation, relation, nom, famille, clan  FROM relations LEFT JOIN PNJ ON PNJ.id=id_relation WHERE id_pnj='$cible';";
+$rqtrela="SELECT relations.id AS id, id_relation, relation, nom, famille, clan  FROM relations LEFT JOIN PNJ ON PNJ.id=id_relation WHERE id_pnj='$cible';";
 $rela=$mysqli->query($rqtrela);
 $accent=array('á','à','â','ä','ã','å','ç','é','è','ê','ê','ë','í','ì','î','ï','ñ','ó','ò','ô','ö','õ','ú','ù','û','ü','ý','ÿ');
 $pasaccent=array('a','a','a','a','a','a','c','e','e','e','e','e','i','i','i','i','n','o','o','o','o','o','u','u','u','u','y','y');
@@ -31,15 +31,15 @@ while($laliste=$liste->fetch_assoc()){
 <div id="allscreen">
     <div id="grey"></div>
     <div id="relations">
-       <div id='closerelation'>X</div>    
+        <div id='closerelation'>X</div>
         <h4>gestion des relations pour <br><?php echo $current; ?></h4>
-      
-      
-      <div id="relationflex">
-       <div id="relagauche">
-        <h5>Relations actuelles : </h5>
-        <ul class="relations">
-            <?php
+
+
+        <div id="relationflex">
+            <div id="relagauche">
+                <h5>Relations actuelles : </h5>
+                <ul class="relations2" id="relationpour<?php echo $cible; ?>">
+                    <?php
             while($relation=$rela->fetch_assoc()){
                 $clan=str_replace('z','',$relation['clan']);
                 $clan=str_replace($accent,$pasaccent,$clan);
@@ -54,26 +54,31 @@ while($laliste=$liste->fetch_assoc()){
                 $alt=$famille.$relation['nom'];
                 $alt=str_replace(' ','',$alt);
                 $identifiant=$relation['id_relation'];
-                echo "<li class='relation' >$famille"." ".$relation['nom']." (".$relation['relation'].")   <span class='kill'>X</span></li>";
+                echo "<li class='relation2' id='larela".$relation['id']."' >$famille"." ".$relation['nom']." (".$relation['relation'].")   <span class='kill' value='".$relation['id']."'>X</span></li>";
             }
         ?>
-        </ul>
+                </ul>
 
-        <h5> Ajouter une relation pour <br><?php echo $current; ?></h5>
-        selectionner la relation
-       
-        <div>
-        <input type="select" list="selectguy" id="relaselect" name="relaselect">
-        <datalist id="selectguy">
-           <select>
-            <?php echo $datalist;?>
-            </select>
-        </datalist>
-        <input type="hidden" name="current" id="current" value="<?php echo $cible; ?>">
-        <input type="hidden" name="currentnom" id="currentnom" value="<?php echo $current; ?>">
-        </div>
-          </div>
-          <div id="reladroite"></div>
+
+            </div>
+            <div id="reladroite">
+                <h5> Ajouter une relation pour <br><?php echo $current; ?></h5>
+                selectionner la relation
+
+                <div>
+                    <input type="select" list="selectguy" id="relaselect" name="relaselect">
+                    <datalist id="selectguy">
+                        <select>
+                            <?php echo $datalist;?>
+                        </select>
+                    </datalist>
+                    <input type="hidden" name="current" id="current" value="<?php echo $cible; ?>">
+                    <input type="hidden" name="currentnom" id="currentnom" value="<?php echo $current; ?>">
+                </div>
+                <div id="inserte">
+                </div>
+
+            </div>
         </div>
 
     </div>
